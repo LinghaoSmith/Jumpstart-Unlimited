@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jumpstart Unlimited</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <img
+        src="https://i.postimg.cc/L4Zbp1tk/text1.png"
+        alt="Jumpstart Unlimited"
+        class="title-logo"
+      />
+      <p>Pick two packs from your custom pool and get a ready-to-copy decklist.</p>
+	  <p>To play, copy and paste the decklist into your deckbuilder of choice and load up digital Magic: the Gathering software like Cockatrice or Tabletop Simulator to play!</p>
+    </header>
+
+    <!-- Set filter menu -->
+    <section id="setFilterSection" class="panel">
+      <div class="panel-header">
+        <h2>Available Sets</h2>
+        <p>Select which sets to include in the random pool.</p>
+        <p id="setCountText" class="set-count-text">0 packs currently in pool.</p>
+      </div>
+      <div id="setFilters" class="set-filters"></div>
+      <div class="controls controls-sets">
+        <button id="selectAllSetsBtn" class="secondary small">Select All</button>
+        <button id="clearAllSetsBtn" class="secondary small">Clear All</button>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="startBtn" class="primary">Start Jumpstart</button>
+    </section>
+
+    <section id="choicesSection" class="panel" style="display:none;">
+      <div class="panel-header">
+        <h2>Pack Choice <span id="choiceNumber">1</span> / 2</h2>
+        <p>Click a pack to select it, or reroll for different options.</p>
+      </div>
+
+      <!-- First pack summary (visible only when picking pack 2) -->
+      <div id="firstPackSummary" class="first-pack-summary" style="display:none;"></div>
+
+      <div class="controls controls-choices">
+        <button id="rerollBtn" class="secondary">Reroll Packs</button>
+      </div>
+
+      <div id="packChoices" class="pack-choices"></div>
+    </section>
+
+    <section id="resultSection" class="panel" style="display:none;">
+      <div class="panel-header">
+        <h2>Your Combined Deck</h2>
+        <p>Copy & paste this decklist.</p>
+      </div>
+      <textarea id="decklistOutput" rows="18" spellcheck="false"></textarea>
+      <div class="controls">
+        <button id="copyDeckBtn" class="primary">Copy Decklist</button>
+        <button id="restartBtn" class="secondary">Start Over</button>
+      </div>
+    </section>
+
+    <!-- Changelog panel -->
+    <section id="changelogSection" class="panel">
+      <div class="panel-header">
+        <h2>Changelog</h2>
+        <p>This project originally started in November of 2022 as Jumpstart Extended, a workshop page for Tabletop Simulator. Due to poor management on my part, the image backs that were on all the cards in on that program broke since I used Discord as an image hosting service. The project has been abandoned since September 2024 because of that. Until now...</p>
+      </div>
+      <div id="changelogContent" class="changelog-content">
+        <!-- Example entry; replace with your own -->
+        <p><strong>2025-11-25</strong> – Initial public release of Jumpstart Unlimited.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>
+      Card images and card data via
+      <a href="https://scryfall.com/docs/api" target="_blank" rel="noreferrer">Scryfall API</a>.
+      This site is unofficial and not affiliated with Wizards of the Coast.
+    </small>
+  </footer>
+
+  <!-- Card preview panel (first card hover) -->
+  <div id="cardPreview" class="card-preview" style="display:none;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
